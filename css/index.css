@@ -1,0 +1,17 @@
+body {
+    padding: 20px;
+}
+
+.btn.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn.btn-primary.btn-lg.btn-block {
+    margin-bottom: 20px;
+}
+
+.buttonBlock {
+    width: 50%;
+    margin: 0 auto;
+}

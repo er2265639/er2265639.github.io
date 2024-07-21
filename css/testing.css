@@ -1,0 +1,33 @@
+body {
+    padding: 20px;
+}
+
+select,
+.input-group,
+.btn.btn-block,
+#content {
+    margin-bottom: 20px;
+}
+
+.btn.btn-block {
+    display: block;
+    width: 100%;
+}
+
+#next,
+#finish {
+    display: none;
+}
+
+input.form-check-input {
+    width: 2em;
+    height: 2em;
+}
+
+div.form-check {
+    padding: 0.5rem 2.5rem;
+}
+
+.form-check .form-check-input {
+    margin-left: -2.5rem;
+}

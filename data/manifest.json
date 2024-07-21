@@ -1,0 +1,40 @@
+{
+    "name": "考試",
+    "short_name": "考試",
+    "description": "升等考試閱讀/測驗。",
+    "start_url": "//192.168.0.125/test/index.html?utm_source=PWA&utm_medium=home_screen&utm_campaign=pwa",
+    "id": "//192.168.0.125/test/index.html?utm_source=PWA&utm_medium=home_screen&utm_campaign=pwa",
+    "display": "standalone",
+    "background_color": "#FAFAFA",
+    "theme_color": "#00A7E5",
+    "icons": [
+        {
+            "src": "//192.168.0.125/test/icon/icon_192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any"
+        },
+        {
+            "src": "//192.168.0.125/test/icon/icon_512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "//192.168.0.125/test/icon/icon_512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Narrow Widgets"
+        },
+        {
+            "src": "//192.168.0.125/test/icon/icon_512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Wonder Widgets"
+        }
+    ]
+}

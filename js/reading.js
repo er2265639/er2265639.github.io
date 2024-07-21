@@ -4,7 +4,7 @@ $(document).ready(function () {
 });
 
 function getOption() {
-    $.getJSON('//192.168.0.125/test/data/option.json', function (data, textStatus, jqXHR) {
+    $.getJSON('https://er2265639.github.io/data/option.json', function (data, textStatus, jqXHR) {
         $.each(data.data, function (index, value) {
             $('#option').append(createOption(value.value, value.name))
         });
@@ -26,7 +26,7 @@ function OptionChangeEvent() {
         if (value !== '') {
             $.ajax({
                 type: 'get',
-                url: '//192.168.0.125/test/data/' + value,
+                url: 'https://er2265639.github.io/data/' + value,
                 datatype: 'text/csv',
                 success: function (response) {
                     var csvData = d3.csvParse(response);

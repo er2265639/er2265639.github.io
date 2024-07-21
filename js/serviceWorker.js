@@ -1,5 +1,5 @@
 $(document).ready(function () {
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('//192.168.0.125/test/js/pwa-use-sw.js');
+        navigator.serviceWorker.register('https://er2265639.github.io/js/pwa-use-sw.js');
     }
 });

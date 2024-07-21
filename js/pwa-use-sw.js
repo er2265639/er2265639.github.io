@@ -4,9 +4,9 @@ var autoCacheFile = 'letswrite-v1.1.0'; // 存在 Cache Storage 的資料夾名�
 // 一定要存下的檔案清單
 // 比如 404.html、logo.svg，不會自動出現在每頁的 request 上，但當使用者是 offline 時又必要會看到的
 const assets = [
-    '//192.168.0.125/test/index.html?utm_source=PWA&utm_medium=home_screen&utm_campaign=pwa',
-    '//192.168.0.125/test/icon/icon_192.png',
-    '//192.168.0.125/test/icon/icon_512.png'
+    'https://er2265639.github.io/index.html?utm_source=PWA&utm_medium=home_screen&utm_campaign=pwa',
+    'https://er2265639.github.io/icon/icon_192.png',
+    'https://er2265639.github.io/icon/icon_512.png'
 ];
 
 // 限制存進 Cache Storage 的檔案數量

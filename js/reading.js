@@ -37,10 +37,10 @@ function OptionChangeEvent() {
                         var question = value.question;
                         var answerText = getAnswerText(value);
 
-                        text += no + '. ' + question + '<br>'
-                        text += '<span style="color:red">' + answerText + '</span>'
+                        text += '<div class="question">' + no + '. ' + question + '</div>'
+                        text += '<div class="answer">' + answerText + '</div>'
 
-                        content.append('<div no="' + no + '">' + text + '</div><br>');
+                        content.append(text);
                     });
                 }
             });

@@ -14,3 +14,8 @@ select {
 .block {
     margin-bottom: 1rem;
 }
+
+.block.speak{
+    border: 3px solid red;
+    border-radius: 6px;
+}

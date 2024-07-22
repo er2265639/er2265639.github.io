@@ -1,4 +1,7 @@
+const synth = window.speechSynthesis;
+
 $(document).ready(function () {
+    speechSynthesisCancel();
     getOption();
     OptionChangeEvent();
 });
@@ -70,3 +73,24 @@ function getAnswerText(value) {
     return answerText;
 }
 
+function speechSynthesisCancel() {
+    if (synth.speaking) {
+        synth.cancel();
+    }
+}
+
+function speechSynthesisSpeak(target) {
+    const utterThis = new SpeechSynthesisUtterance(target.text());
+
+    utterThis.addEventListener("start", () => {
+        target.addClass('speak');
+        $(window).scrollTop(target.offset().top - 50);
+    });
+
+    utterThis.addEventListener("end", () => {
+        target.removeClass('speak');
+    });
+
+    utterThis.rate = 1.5;
+    synth.speak(utterThis);
+}

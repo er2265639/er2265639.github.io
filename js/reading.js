@@ -5,6 +5,7 @@ $(document).ready(function () {
     getOption();
     OptionChangeEvent();
     reading();
+    leave();
 });
 
 function getOption() {
@@ -126,5 +127,11 @@ function reading() {
                 });
             }
         }
+    });
+}
+
+function leave() {
+    $(window).on('unload', function () {
+        speechSynthesisCancel();
     });
 }

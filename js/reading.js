@@ -84,7 +84,7 @@ function speechSynthesisSpeak(target) {
 
     utterThis.addEventListener("start", () => {
         target.addClass('speak');
-        $(window).scrollTop(target.offset().top - 50);
+        $(window).scrollTop(target.offset().top - Math.trunc(window.innerHeight / 5))
     });
 
     utterThis.addEventListener("end", () => {

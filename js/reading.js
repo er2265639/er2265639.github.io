@@ -40,7 +40,7 @@ function OptionChangeEvent() {
                         text += no + '. ' + question + '<br>'
                         text += '<span style="color:red">' + answerText + '</span>'
 
-                        content.append('<div>' + text + '</div><br>');
+                        content.append('<div no="' + no + '">' + text + '</div><br>');
                     });
                 }
             });

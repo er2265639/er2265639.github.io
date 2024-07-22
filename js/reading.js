@@ -37,8 +37,9 @@ function OptionChangeEvent() {
                         var question = value.question;
                         var answerText = getAnswerText(value);
 
-                        text += '<div class="question">' + no + '. ' + question + '</div>'
-                        text += '<div class="answer">' + answerText + '</div>'
+                        text += '<div class="question">' + no + '. ' + question + '</div>';
+                        text += '<div class="answer">' + answerText + '</div>';
+                        text = '<div class="block">' + text + '</div>';
 
                         content.append(text);
                     });

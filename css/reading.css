@@ -7,7 +7,10 @@ select {
 }
 
 .answer {
-    margin-bottom: 1rem;
     color: red;
     font-weight: bold;
+}
+
+.block {
+    margin-bottom: 1rem;
 }

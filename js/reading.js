@@ -38,9 +38,9 @@ function OptionChangeEvent() {
                         var answerText = getAnswerText(value);
 
                         text += no + '. ' + question + '<br>'
-                        text += '<span style="color:red">' + answerText + '</span><br><br>'
+                        text += '<span style="color:red">' + answerText + '</span>'
 
-                        content.append(text);
+                        content.append('<div>' + text + '</div><br>');
                     });
                 }
             });

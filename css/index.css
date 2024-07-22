@@ -12,13 +12,8 @@ body {
 }
 
 .buttonBlock {
-    width: 50%;
-    margin: 0 auto;
-}
-
-@media screen and (max-width: 1024px) {
-    .buttonBlock {
-        width: 100%;
-        margin: 0 auto;
-    }
+    position: fixed;
+    width: calc(100% - 40px);
+    top: calc(30% - 68px);
+    left: calc(0% + 20px);
 }

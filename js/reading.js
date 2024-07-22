@@ -4,6 +4,7 @@ $(document).ready(function () {
     speechSynthesisCancel();
     getOption();
     OptionChangeEvent();
+    reading();
 });
 
 function getOption() {
@@ -42,7 +43,7 @@ function OptionChangeEvent() {
 
                         text += '<div class="title">' + no + '. ' + question + '</div>';
                         text += '<div class="answer">' + answerText + '</div>';
-                        text = '<div class="block" id="question' + no + '">' + text + '</div>';
+                        text = '<div class="block" id="question' + no + '" no="' + no + '">' + text + '</div>';
 
                         content.append(text);
                     });
@@ -93,4 +94,37 @@ function speechSynthesisSpeak(target) {
 
     utterThis.rate = 1.5;
     synth.speak(utterThis);
+}
+
+function reading() {
+    $('#reading').click(function (e) {
+        var start = $("#start").val();
+        var end = $("#end").val();
+        var content = $('#content .block')
+
+        if (content.length === 0 ) {
+            alert('題庫載入失敗，請重新選擇!');
+        } else {
+            if (start === '' || end === '') {
+                start = 1;
+                end = content.length;
+    
+                alert('全部閱讀!');
+            }
+    
+            if ((end * 1) < (start * 1)) {
+                alert('閱讀範圍輸入錯誤!');
+            } else if (((end * 1) - (start * 1)) < 49) {
+                alert('閱讀範圍需至少大於50題!');
+            } else {
+                $.each(content, function (index, value) {
+                    var no = $(this).attr('no') * 1;
+            
+                    if (no >= start && no <= end) {
+                        speechSynthesisSpeak($(this));
+                    }
+                });
+            }
+        }
+    });
 }

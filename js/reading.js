@@ -25,6 +25,12 @@ async function wakeLock() {
         };
 
         await requestWakeLock();
+
+        // 五秒後釋放
+        // window.setTimeout(() => {
+        //     wakeLock.release();
+        //     wakeLock = null;
+        // }, 5000);
     }
 }
 

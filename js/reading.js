@@ -6,32 +6,25 @@ $(document).ready(function () {
     OptionChangeEvent();
     reading();
     leave();
-    wakeLock();
+    screenLock();
 });
 
-async function wakeLock() {
-    if ("wakeLock" in navigator) {
-        let wakeLock = null;
-        const requestWakeLock = async () => {
-            try {
-                wakeLock = await navigator.wakeLock.request();
-                wakeLock.addEventListener("release", () => {
-                    console.log("Screen Wake Lock released:", wakeLock.released);
-                });
-                console.log("Screen Wake Lock released:", wakeLock.released);
-            } catch (err) {
-                console.error(`${err.name}, ${err.message}`);
-            }
-        };
+async function screenLock() {
+    if (isScreenLockSupported()) {
+        let screenLock;
 
-        await requestWakeLock();
+        try {
+            screenLock = await navigator.wakeLock.request('screen');
+        } catch (err) {
+            console.log(err.name, err.message);
+        }
 
-        // 五秒後釋放
-        // window.setTimeout(() => {
-        //     wakeLock.release();
-        //     wakeLock = null;
-        // }, 5000);
+        return screenLock;
     }
+}
+
+function isScreenLockSupported() {
+    return ('wakeLock' in navigator);
 }
 
 function getOption() {

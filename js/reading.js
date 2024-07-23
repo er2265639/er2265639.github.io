@@ -6,7 +6,16 @@ $(document).ready(function () {
     OptionChangeEvent();
     reading();
     leave();
+    requestWakeLock();
 });
+
+const requestWakeLock = async () => {
+    try {
+        const wakeLock = await navigator.wakeLock.request("screen");
+    } catch (err) {
+        console.log(`${err.name}, ${err.message}`);
+    }
+};
 
 function getOption() {
     $.getJSON('https://er2265639.github.io/data/option.json', function (data, textStatus, jqXHR) {

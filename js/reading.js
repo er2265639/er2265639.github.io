@@ -1,5 +1,4 @@
 const synth = window.speechSynthesis;
-const wakeLock = null;
 
 $(document).ready(function () {
     speechSynthesisCancel();
@@ -7,24 +6,27 @@ $(document).ready(function () {
     OptionChangeEvent();
     reading();
     leave();
-    visibilitychange();
+    wakeLock();
 });
 
-function visibilitychange(){
-    document.addEventListener("visibilitychange", async () => {
-        if (wakeLock !== null && document.visibilityState === 'visible') {
-            requestWakeLock();
-        }
-    });
-}
+async function wakeLock() {
+    if ("wakeLock" in navigator) {
+        let wakeLock = null;
+        const requestWakeLock = async () => {
+            try {
+                wakeLock = await navigator.wakeLock.request();
+                wakeLock.addEventListener("release", () => {
+                    console.log("Screen Wake Lock released:", wakeLock.released);
+                });
+                console.log("Screen Wake Lock released:", wakeLock.released);
+            } catch (err) {
+                console.error(`${err.name}, ${err.message}`);
+            }
+        };
 
-const requestWakeLock = async () => {
-    try {
-        wakeLock = await navigator.wakeLock.request("screen");
-    } catch (err) {
-        console.log(`${err.name}, ${err.message}`);
+        await requestWakeLock();
     }
-};
+}
 
 function getOption() {
     $.getJSON('https://er2265639.github.io/data/option.json', function (data, textStatus, jqXHR) {

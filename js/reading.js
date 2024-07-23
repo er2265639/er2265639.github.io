@@ -1,4 +1,5 @@
 const synth = window.speechSynthesis;
+const wakeLock = null;
 
 $(document).ready(function () {
     speechSynthesisCancel();
@@ -6,12 +7,20 @@ $(document).ready(function () {
     OptionChangeEvent();
     reading();
     leave();
-    requestWakeLock();
+    visibilitychange();
 });
+
+function visibilitychange(){
+    document.addEventListener("visibilitychange", async () => {
+        if (wakeLock !== null && document.visibilityState === 'visible') {
+            requestWakeLock();
+        }
+    });
+}
 
 const requestWakeLock = async () => {
     try {
-        const wakeLock = await navigator.wakeLock.request("screen");
+        wakeLock = await navigator.wakeLock.request("screen");
     } catch (err) {
         console.log(`${err.name}, ${err.message}`);
     }
@@ -112,16 +121,16 @@ function reading() {
         var end = $("#end").val();
         var content = $('#content .block')
 
-        if (content.length === 0 ) {
+        if (content.length === 0) {
             alert('題庫載入失敗，請重新選擇!');
         } else {
             if (start === '' || end === '') {
                 start = 1;
                 end = content.length;
-    
+
                 alert('全部閱讀!');
             }
-    
+
             if ((end * 1) < (start * 1)) {
                 alert('閱讀範圍輸入錯誤!');
             } else if (((end * 1) - (start * 1)) < 49) {
@@ -129,7 +138,7 @@ function reading() {
             } else {
                 $.each(content, function (index, value) {
                     var no = $(this).attr('no') * 1;
-            
+
                     if (no >= start && no <= end) {
                         speechSynthesisSpeak($(this));
                     }

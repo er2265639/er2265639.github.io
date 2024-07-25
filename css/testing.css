@@ -31,3 +31,8 @@ div.form-check {
 .form-check .form-check-input {
     margin-left: -2.5rem;
 }
+
+.form-check-input:disabled~.form-check-label,
+.form-check-input[disabled]~.form-check-label {
+    opacity: 1;
+}

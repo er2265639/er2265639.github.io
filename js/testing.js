@@ -172,6 +172,7 @@ function testingOptionClick() {
         }
 
         $('label[for=testingOption' + answer + ']').css('background', 'lightgreen')
+        $('[name=testingOption]').prop('disabled', true)
     });
 }
 

@@ -216,6 +216,31 @@ function displayErrorData() {
 
 function keyboardEvent() {
     window.addEventListener("keyup", function (e) {
-        console.log(e.key);
+        var keyValue = e.key
+        switch (keyValue) {
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+                optionTriggerEvent($('[name=testingOption][value=' + keyValue + ']'));
+                break;
+            case 'Enter':
+                buttonTriggerEvent($('#testing, #next, #finish'))
+                break;
+        }
+    });
+}
+
+function optionTriggerEvent(target) {
+    if (target.length > 0) {
+        target.trigger('click');
+    }
+}
+
+function buttonTriggerEvent(target) {
+    $.each(target, function (index, value) {
+        if ($(this).length > 0 && $(this).css('display') !== 'none') {
+            $(this).trigger('click');
+        }
     });
 }

@@ -9,6 +9,7 @@ $(document).ready(function () {
     testingStart();
     nextQuestion();
     finish();
+    keyboardEvent();
 });
 
 function getOption() {
@@ -54,10 +55,10 @@ function testingStart() {
             if (start === '' || end === '') {
                 start = 1;
                 end = csvData.length + 1;
-    
+
                 alert('全部測驗!');
             }
-    
+
             if ((end * 1) < (start * 1)) {
                 alert('測驗範圍輸入錯誤!');
             } else if (((end * 1) - (start * 1)) < 9) {
@@ -65,7 +66,7 @@ function testingStart() {
             } else {
                 addTestingData(csvData, start, end);
                 createContent(testingData[0], 0);
-    
+
                 $('#option, .input-group, #testing').hide();
                 $('#next').show();
             }
@@ -210,5 +211,11 @@ function displayErrorData() {
 
             $('#content').append(text);
         }
+    });
+}
+
+function keyboardEvent() {
+    window.addEventListener("keyup", function (e) {
+        console.log(e.key);
     });
 }

@@ -241,6 +241,8 @@ function buttonTriggerEvent(target) {
     $.each(target, function (index, value) {
         if ($(this).length > 0 && $(this).css('display') !== 'none') {
             $(this).trigger('click');
+            
+            return false;
         }
     });
 }

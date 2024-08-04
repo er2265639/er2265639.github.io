@@ -13,7 +13,6 @@ $(document).ready(function () {
     keyboardEvent();
     screenLock();
     speechSynthesisCancel();
-    reading();
     leave();
 });
 
@@ -72,7 +71,8 @@ function testingStart() {
                 addTestingData(csvData, start, end);
                 createContent(testingData[0], 0);
 
-                $('#option, .input-group, #testing').hide();
+                $('#option, .input-group, #testing, #speakControl').hide();
+                
                 $('#next').show();
             }
         }
@@ -217,6 +217,10 @@ function displayErrorData() {
 
             content.append(text);
         }
+
+        if (errorData.length > 0) {
+            reading();
+        }
     });
 }
 
@@ -277,23 +281,21 @@ function speechSynthesisCancel() {
 }
 
 function reading() {
-    $('#reading').click(function (e) {
-        var content = $('#content .block');
-        var speakControl = $('#speakControl');
+    var content = $('#content .block');
+    var speakControl = $('#speakControl');
 
-        if (content.length === 0) {
-            alert('題目載入失敗，無資料!');
-        } else {
-            speechSynthesisCancel();
+    if (content.length === 0) {
+        alert('題目載入失敗，無資料!');
+    } else {
+        speechSynthesisCancel();
 
-            $.each(content, function (index, value) {
-                speechSynthesisSpeak($(this));
-            });
+        $.each(content, function (index, value) {
+            speechSynthesisSpeak($(this));
+        });
 
-            speakControl.css('display', 'block');
-            speakControlEvent();
-        }
-    });
+        speakControl.css('display', 'block');
+        speakControlEvent();
+    }
 }
 
 function speechSynthesisSpeak(target) {

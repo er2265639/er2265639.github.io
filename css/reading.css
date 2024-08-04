@@ -23,7 +23,14 @@ select,
     margin-bottom: 1rem;
 }
 
-.block.speak{
+.block.speak {
     border: 3px solid red;
     border-radius: 6px;
+}
+
+#speakControl {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: none;
 }

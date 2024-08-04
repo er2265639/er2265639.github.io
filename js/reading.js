@@ -7,6 +7,7 @@ $(document).ready(function () {
     reading();
     leave();
     screenLock();
+    speakControlEvent();
 });
 
 async function screenLock() {
@@ -120,7 +121,8 @@ function reading() {
     $('#reading').click(function (e) {
         var start = $("#start").val();
         var end = $("#end").val();
-        var content = $('#content .block')
+        var content = $('#content .block');
+        var speakControl = $('#speakControl');
 
         if (content.length === 0) {
             alert('題庫載入失敗，請重新選擇!');
@@ -144,6 +146,8 @@ function reading() {
                         speechSynthesisSpeak($(this));
                     }
                 });
+
+                speakControl.css('display', 'block');
             }
         }
     });
@@ -152,5 +156,26 @@ function reading() {
 function leave() {
     $(window).on('unload', function () {
         speechSynthesisCancel();
+    });
+}
+
+function speakControlEvent() {
+    var speakControl = $('#speakControl');
+
+    speakControl.click(function (e) {
+        var icon = $(this).find('i');
+        if (icon.hasClass('bi-pause') === true) {
+            if (synth.speaking) {
+                icon.removeClass('bi-pause').addClass('bi-play');
+                synth.pause();
+            }
+        }
+
+        if (icon.hasClass('bi-play') === true) {
+            if (synth.paused) {
+                icon.removeClass('bi-play').addClass('bi-pause');
+                synth.resume();
+            }
+        }
     });
 }

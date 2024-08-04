@@ -161,6 +161,8 @@ function leave() {
 }
 
 function speakControlEvent() {
+    $('#speakControl').find('i').removeClass('bi-play').addClass('bi-pause');
+
     $('#speakControl').unbind('click').click(function (e) {
         var icon = $(this).find('i');
 

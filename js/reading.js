@@ -161,9 +161,11 @@ function leave() {
 
 function speakControlEvent() {
     $('#speakControl').click(function (e) {
-        console.log('test');
+        
 
         var icon = $(this).find('i');
+
+        console.log(icon.hasClass('bi-pause'));
 
         if (icon.hasClass('bi-pause') === true) {
             if (synth.speaking === true) {

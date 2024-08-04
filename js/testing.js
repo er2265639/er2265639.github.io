@@ -218,11 +218,11 @@ function displayErrorData() {
 
             content.append(text);
         }
-
-        if (errorData.length > 0) {
-            reading();
-        }
     });
+
+    if (errorData.length > 0) {
+        reading();
+    }
 }
 
 function keyboardEvent() {

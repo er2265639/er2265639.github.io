@@ -216,7 +216,7 @@ function displayErrorData() {
             text += '<div class="answer">' + answerText + '</div>';
             text = '<div class="block" id="question' + no + '" no="' + no + '">' + text + '</div>';
 
-            content.append(text);
+            $('#content').append(text);
         }
     });
 

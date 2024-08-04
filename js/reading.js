@@ -164,6 +164,7 @@ function speakControlEvent() {
 
     speakControl.click(function (e) {
         var icon = $(this).find('i');
+
         if (icon.hasClass('bi-pause') === true) {
             if (synth.speaking) {
                 icon.removeClass('bi-pause').addClass('bi-play');

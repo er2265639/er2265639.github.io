@@ -96,6 +96,7 @@ function getAnswerText(value) {
 
 function speechSynthesisCancel() {
     synth.cancel();
+    $('#content .block').removeClass('speak');
 }
 
 function speechSynthesisSpeak(target) {

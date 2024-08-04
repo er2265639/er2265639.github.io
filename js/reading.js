@@ -161,26 +161,14 @@ function leave() {
 
 function speakControlEvent() {
     $('#speakControl').click(function (e) {
-        
-
         var icon = $(this).find('i');
 
-        
-
-        if (icon.hasClass('bi-pause') === true) {
-            if (synth.speaking === true) {
-                console.log(synth.speaking);
-
-                icon.removeClass('bi-pause').addClass('bi-play');
-                synth.pause();
-            }
-        }
-
-        if (icon.hasClass('bi-play') === true) {
-            if (synth.paused === true || synth.pending === true) {
-                icon.removeClass('bi-play').addClass('bi-pause');
-                synth.resume();
-            }
+        if (synth.speaking === true) {
+            icon.removeClass('bi-pause').addClass('bi-play');
+            synth.pause();
+        } else if (synth.paused === true || synth.pending === true) {
+            icon.removeClass('bi-play').addClass('bi-pause');
+            synth.resume();
         }
     });
 }

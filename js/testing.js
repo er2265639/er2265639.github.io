@@ -72,6 +72,7 @@ function testingStart() {
                 createContent(testingData[0], 0);
 
                 $('#option, .input-group, #testing, #speakControl').hide();
+                speechSynthesisCancel();
                 
                 $('#next').show();
             }

@@ -173,7 +173,7 @@ function speakControlEvent() {
         }
 
         if (icon.hasClass('bi-play') === true) {
-            if (synth.paused) {
+            if (synth.paused || synth.pending) {
                 icon.removeClass('bi-play').addClass('bi-pause');
                 synth.resume();
             }

@@ -136,6 +136,8 @@ function reading() {
             } else if (((end * 1) - (start * 1)) < 49) {
                 alert('閱讀範圍需至少大於50題!');
             } else {
+                speechSynthesisCancel();
+                
                 $.each(content, function (index, value) {
                     var no = $(this).attr('no') * 1;
 
@@ -145,7 +147,7 @@ function reading() {
                 });
 
                 speakControl.css('display', 'block');
-                speechSynthesisCancel();
+                
                 speakControlEvent();
             }
         }

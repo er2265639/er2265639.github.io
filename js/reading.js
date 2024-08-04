@@ -165,10 +165,12 @@ function speakControlEvent() {
 
         var icon = $(this).find('i');
 
-        console.log(icon.hasClass('bi-pause'));
+        
 
         if (icon.hasClass('bi-pause') === true) {
             if (synth.speaking === true) {
+                console.log(synth.speaking);
+
                 icon.removeClass('bi-pause').addClass('bi-play');
                 synth.pause();
             }

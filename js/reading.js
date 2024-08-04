@@ -137,7 +137,7 @@ function reading() {
                 alert('閱讀範圍需至少大於50題!');
             } else {
                 speechSynthesisCancel();
-                
+
                 $.each(content, function (index, value) {
                     var no = $(this).attr('no') * 1;
 
@@ -161,7 +161,7 @@ function leave() {
 }
 
 function speakControlEvent() {
-    $('#speakControl').click(function (e) {
+    $('#speakControl').unbind('click').click(function (e) {
         var icon = $(this).find('i');
 
         if (icon.hasClass('bi-pause')) {

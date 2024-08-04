@@ -7,7 +7,6 @@ $(document).ready(function () {
     reading();
     leave();
     screenLock();
-    speakControlEvent();
 });
 
 async function screenLock() {
@@ -148,6 +147,7 @@ function reading() {
                 });
 
                 speakControl.css('display', 'block');
+                speakControlEvent();
             }
         }
     });

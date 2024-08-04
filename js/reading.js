@@ -145,6 +145,7 @@ function reading() {
                 });
 
                 speakControl.css('display', 'block');
+                speechSynthesisCancel();
                 speakControlEvent();
             }
         }

@@ -2,6 +2,7 @@ var testingData = [];
 var csvData = '';
 var correct = 0;
 var errorData = [];
+const synth = window.speechSynthesis;
 
 $(document).ready(function () {
     getOption();
@@ -10,6 +11,10 @@ $(document).ready(function () {
     nextQuestion();
     finish();
     keyboardEvent();
+    screenLock();
+    speechSynthesisCancel();
+    reading();
+    leave();
 });
 
 function getOption() {
@@ -206,10 +211,11 @@ function displayErrorData() {
             var question = value.question;
             var answerText = getAnswerText(value);
 
-            text += no + '. ' + question + '<br>'
-            text += '<span style="color:red">' + answerText + '</span><br><br>'
+            text += '<div class="title">' + no + '. ' + question + '</div>';
+            text += '<div class="answer">' + answerText + '</div>';
+            text = '<div class="block" id="question' + no + '" no="' + no + '">' + text + '</div>';
 
-            $('#content').append(text);
+            content.append(text);
         }
     });
 }
@@ -241,8 +247,89 @@ function buttonTriggerEvent(target) {
     $.each(target, function (index, value) {
         if ($(this).length > 0 && $(this).css('display') !== 'none') {
             $(this).trigger('click');
-            
+
             return false;
         }
+    });
+}
+
+async function screenLock() {
+    if (isScreenLockSupported()) {
+        let screenLock;
+
+        try {
+            screenLock = await navigator.wakeLock.request('screen');
+        } catch (err) {
+            console.log(err.name, err.message);
+        }
+
+        return screenLock;
+    }
+}
+
+function isScreenLockSupported() {
+    return ('wakeLock' in navigator);
+}
+
+function speechSynthesisCancel() {
+    $('#content .block').removeClass('speak');
+    synth.cancel();
+}
+
+function reading() {
+    $('#reading').click(function (e) {
+        var content = $('#content .block');
+        var speakControl = $('#speakControl');
+
+        if (content.length === 0) {
+            alert('題目載入失敗，無資料!');
+        } else {
+            speechSynthesisCancel();
+
+            $.each(content, function (index, value) {
+                speechSynthesisSpeak($(this));
+            });
+
+            speakControl.css('display', 'block');
+            speakControlEvent();
+        }
+    });
+}
+
+function speechSynthesisSpeak(target) {
+    const utterThis = new SpeechSynthesisUtterance(target.text());
+
+    utterThis.addEventListener("start", () => {
+        target.addClass('speak');
+        $(window).scrollTop(target.offset().top - Math.trunc(window.innerHeight / 5))
+    });
+
+    utterThis.addEventListener("end", () => {
+        target.removeClass('speak');
+    });
+
+    utterThis.rate = 1.5;
+    synth.speak(utterThis);
+}
+
+function speakControlEvent() {
+    $('#speakControl').find('i').removeClass('bi-play').addClass('bi-pause');
+
+    $('#speakControl').unbind('click').click(function (e) {
+        var icon = $(this).find('i');
+
+        if (icon.hasClass('bi-pause')) {
+            icon.removeClass('bi-pause').addClass('bi-play');
+            synth.pause();
+        } else {
+            icon.removeClass('bi-play').addClass('bi-pause');
+            synth.resume();
+        }
+    });
+}
+
+function leave() {
+    $(window).on('unload', function () {
+        speechSynthesisCancel();
     });
 }

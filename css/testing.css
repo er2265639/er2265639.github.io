@@ -36,3 +36,24 @@ div.form-check {
 .form-check-input[disabled]~.form-check-label {
     opacity: 1;
 }
+
+.answer {
+    color: red;
+    font-weight: bold;
+}
+
+.block {
+    margin-bottom: 1rem;
+}
+
+.block.speak {
+    border: 3px solid red;
+    border-radius: 6px;
+}
+
+#speakControl {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+}

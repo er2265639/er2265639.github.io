@@ -95,9 +95,7 @@ function getAnswerText(value) {
 }
 
 function speechSynthesisCancel() {
-    if (synth.speaking) {
-        synth.cancel();
-    }
+    synth.cancel();
 }
 
 function speechSynthesisSpeak(target) {
@@ -163,10 +161,10 @@ function speakControlEvent() {
     $('#speakControl').click(function (e) {
         var icon = $(this).find('i');
 
-        if (synth.speaking === true) {
+        if (icon.hasClass('bi-pause')) {
             icon.removeClass('bi-pause').addClass('bi-play');
             synth.pause();
-        } else if (synth.paused === true || synth.pending === true) {
+        } else {
             icon.removeClass('bi-play').addClass('bi-pause');
             synth.resume();
         }

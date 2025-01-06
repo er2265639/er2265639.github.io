@@ -13,15 +13,6 @@ body {
     z-index: -1;
 }
 
-.month p, .day p{
-    display: inline-block;
-    margin: 0.5rem;
-    width: 2.6rem;
-    text-align: center;
-    font-size: 1.3rem;
-    font-family: '微軟正黑體';
-}
-
 .month {
     display: block;
     width: fit-content;
@@ -31,11 +22,29 @@ body {
     top: 10%;
 }
 
+.month p{
+    display: inline-block;
+    margin: 1rem;
+    width: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    font-family: '微軟正黑體';
+}
+
 .day {
     display: block;
     width: fit-content;
     background-color: #d7f5facc;
     position: absolute;
     right: 2%;
-    bottom: 10%;
+    bottom: 2%;
+}
+
+.day p{
+    display: inline-block;
+    margin: 1rem;
+    width: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    font-family: '微軟正黑體';
 }

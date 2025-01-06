@@ -5,12 +5,12 @@ $(document).ready(function () {
 
 function readingButtonEvent() {
     $("#reading").click(function (e) {
-        window.location.href = 'https://er2265639.github.io/reading.html';
+        window.location.href = 'https://er2265639.github.io/test/reading.html';
     });
 }
 
 function testingButtonEvent() {
     $("#testing").click(function (e) {
-        window.location.href = 'https://er2265639.github.io/testing.html';
+        window.location.href = 'https://er2265639.github.io/test/testing.html';
     });
 }

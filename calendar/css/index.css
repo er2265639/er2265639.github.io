@@ -25,9 +25,9 @@ body {
 .month p{
     display: inline-block;
     margin: 1rem;
-    width: 3rem;
+    width: 4rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: '微軟正黑體';
 }
 
@@ -45,6 +45,6 @@ body {
     margin: 1rem;
     width: 2rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: '微軟正黑體';
 }

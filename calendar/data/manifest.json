@@ -1,0 +1,40 @@
+{
+    "name": "萬年曆",
+    "short_name": "萬年曆",
+    "description": "萬年曆",
+    "start_url": "https://er2265639.github.io/calendar/index.html?utm_source=PWA&utm_medium=home_screen&utm_campaign=pwa",
+    "id": "https://er2265639.github.io/calendar/index.html?utm_source=PWA&utm_medium=home_screen&utm_campaign=pwa",
+    "display": "standalone",
+    "background_color": "#FAFAFA",
+    "theme_color": "#00A7E5",
+    "icons": [
+        {
+            "src": "https://er2265639.github.io/calendar/icon/icon_192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any"
+        },
+        {
+            "src": "https://er2265639.github.io/calendar/icon/icon_512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "https://er2265639.github.io/calendar/icon/icon_512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Narrow Widgets"
+        },
+        {
+            "src": "https://er2265639.github.io/calendar/icon/icon_512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Wonder Widgets"
+        }
+    ]
+}

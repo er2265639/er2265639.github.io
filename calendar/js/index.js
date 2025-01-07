@@ -28,7 +28,6 @@ function setTime() {
         var hh = date.getHours();
         var mm = date.getMinutes();
         var ss = date.getSeconds();
-        var time = hh + '：' + mm + '：' + ss;
 
         if (hh < 10) {
             hh = '0' + hh;
@@ -42,6 +41,6 @@ function setTime() {
             ss = '0' + ss;
         }
 
-        $('.time').text(time)
+        $('.time').text(hh + '：' + mm + '：' + ss)
     }, 1000);
 }

@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    setMonth();
-    setWeek();
     setInterval(function () {
         var date = new Date();
         var month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];

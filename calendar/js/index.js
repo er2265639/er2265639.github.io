@@ -4,6 +4,7 @@ const week = ['24rem', '20rem', '16rem', '12rem', '8rem', '4rem', '0rem'];
 
 $(document).ready(function () {
     setMonth();
+    setWeek();
 });
 
 function setMonth() {

@@ -20,3 +20,12 @@ function setWeek() {
 
     $('.day .week').css('left', week[date.getDay()]);
 }
+
+function setTime() {
+    setInterval(function () {
+        var date = new Date();
+        var time = date.getHours() + '：' + date.getMinutes() + '：' + date.getSeconds();
+
+        $('.time').text(time)
+    }, 1000);
+}

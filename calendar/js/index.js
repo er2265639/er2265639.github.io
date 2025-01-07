@@ -1,6 +1,7 @@
 $(document).ready(function () {
     setMonth();
     setWeek();
+    setTime();
 });
 
 function setMonth() {

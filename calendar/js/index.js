@@ -25,7 +25,22 @@ function setWeek() {
 function setTime() {
     setInterval(function () {
         var date = new Date();
-        var time = date.getHours() + '：' + date.getMinutes() + '：' + date.getSeconds();
+        var hh = date.getHours();
+        var mm = date.getMinutes();
+        var ss = date.getSeconds();
+        var time = hh + '：' + mm + '：' + ss;
+
+        if ((hh + '').length === 1) {
+            hh = '0' + hh;
+        }
+
+        if ((mm + '').length === 1) {
+            mm = '0' + mm;
+        }
+
+        if ((ss + '').length === 1) {
+            ss = '0' + ss;
+        }
 
         $('.time').text(time)
     }, 1000);

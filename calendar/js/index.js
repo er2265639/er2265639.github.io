@@ -30,15 +30,15 @@ function setTime() {
         var ss = date.getSeconds();
         var time = hh + '：' + mm + '：' + ss;
 
-        if ((hh + '').length === 1) {
+        if (hh < 10) {
             hh = '0' + hh;
         }
 
-        if ((mm + '').length === 1) {
+        if (mm < 10) {
             mm = '0' + mm;
         }
 
-        if ((ss + '').length === 1) {
+        if (ss < 10) {
             ss = '0' + ss;
         }
 

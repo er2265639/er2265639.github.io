@@ -34,6 +34,11 @@ $(document).ready(function () {
     }, 1000);
 
     setTimeout(function name() {
-        document.querySelector('video').play();
-    }, 30000);
+        try {
+            $('video')[0].play();
+        } catch (error) {
+            $('video').css('display', 'none');
+            $('.picture').css('display', 'block');
+        }
+    }, 10000);
 });

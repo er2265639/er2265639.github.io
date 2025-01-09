@@ -18,6 +18,7 @@ video {
     top: 5%;
     left: 2%;
     z-index: -1;
+    display: none;
 }
 
 .picture img {

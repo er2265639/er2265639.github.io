@@ -32,4 +32,9 @@ $(document).ready(function () {
 
         $('.time').text(hh + '：' + mm + '：' + ss)
     }, 1000);
+
+    $('body').click(function (e) { 
+        $('video').css('display', 'block').get(0).play();
+        $('.picture').css('display', 'none');
+    });
 });

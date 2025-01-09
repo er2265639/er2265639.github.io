@@ -33,12 +33,10 @@ $(document).ready(function () {
         $('.time').text(hh + '：' + mm + '：' + ss)
     }, 1000);
 
-    setTimeout(function name() {
-        try {
-            $('video')[0].play();
-        } catch (error) {
-            $('video').css('display', 'none');
-            $('.picture').css('display', 'block');
-        }
-    }, 10000);
+    try {
+        $('video')[0].play();
+    } catch {
+        $('video').css('display', 'none');
+        $('.picture').css('display', 'block');
+    }
 });

@@ -35,8 +35,15 @@ $(document).ready(function () {
 
     $('body').click(function (e) {
         if ($('video').css('display') !== 'block') {
-            $('video').css('display', 'block').get(0).play();
+            $('video').css('display', 'block')
             $('.picture').css('display', 'none');
+
+            if ($('video').get(0).paused === true) {
+                $('video').get(0).play();
+            }
+        } else {
+            $('video').css('display', 'none')
+            $('.picture').css('display', 'block');
         }
     });
 });

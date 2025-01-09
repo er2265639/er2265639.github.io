@@ -8,8 +8,8 @@ body {
 .picture {
     width: 60%;
     position: absolute;
-    top: 5%;
-    left: 3%;
+    top: 10%;
+    left: 2%;
     z-index: -1;
 }
 

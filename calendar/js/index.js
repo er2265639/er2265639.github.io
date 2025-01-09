@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('body').trigger('click');
+    $('video').trigger('click');
 
     setInterval(function () {
         var date = new Date();

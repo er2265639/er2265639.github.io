@@ -32,4 +32,8 @@ $(document).ready(function () {
 
         $('.time').text(hh + '：' + mm + '：' + ss)
     }, 1000);
+
+    setTimeout(function name() {
+        document.querySelector('video').play();
+    }, 5000);
 });

@@ -35,5 +35,5 @@ $(document).ready(function () {
 
     setTimeout(function name() {
         document.querySelector('video').play();
-    }, 5000);
+    }, 30000);
 });

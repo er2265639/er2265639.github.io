@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    $('video').trigger('click');
-
     setInterval(function () {
         var date = new Date();
         var month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
@@ -33,14 +31,5 @@ $(document).ready(function () {
         }
 
         $('.time').text(hh + '：' + mm + '：' + ss)
-    }, 1000);
-
-    setTimeout(function name() {
-        try {
-            $('video')[0].play();
-        } catch {
-            $('video').css('display', 'none');
-            $('.picture').css('display', 'block');
-        }
     }, 1000);
 });

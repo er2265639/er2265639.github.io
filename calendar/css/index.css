@@ -5,6 +5,13 @@ body {
     overflow: hidden;
 }
 
+video {
+    width: 60%;
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+}
+
 .picture {
     width: 60%;
     position: absolute;

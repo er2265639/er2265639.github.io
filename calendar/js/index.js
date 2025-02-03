@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    setInterval(function () {
+    // setInterval(function () {
         var date = new Date();
         var month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
@@ -12,6 +12,16 @@ $(document).ready(function () {
         var date = new Date(year + '-' + month + '-1');
 
         $('.day .week').css('left', week[date.getDay()]);
+
+    var todayIndex = [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+    ];
 
         var date = new Date();
         var hh = date.getHours();
@@ -31,7 +41,7 @@ $(document).ready(function () {
         }
 
         $('.time').text(hh + '：' + mm + '：' + ss)
-    }, 1000);
+    // }, 1000);
 
     $('body').click(function (e) {
         if ($('video').css('display') !== 'block') {

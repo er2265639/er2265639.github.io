@@ -85,6 +85,14 @@ video {
     left: 0;
 }
 
+.day .today{
+    position: absolute;
+    background-color: #4caf4f63;
+    border-radius: 1rem;
+    top: -4rem;
+    left: 0;
+}
+
 .time {
     font-family: '微軟正黑體';
     font-size: 5rem;

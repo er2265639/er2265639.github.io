@@ -88,8 +88,10 @@ video {
 .day .today{
     position: absolute;
     background-color: #4caf4f63;
+    height: 4rem;
+    width: 4rem;
     border-radius: 1rem;
-    top: -4rem;
+    top: 0;
     left: 0;
 }
 

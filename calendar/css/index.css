@@ -11,7 +11,14 @@ body {
     top: 20%;
     left: 2%;
     z-index: -1;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.media.visible {
+    visibility: visible;
+    opacity: 1;
 }
 
 .media img {
@@ -33,7 +40,7 @@ body {
     border-radius: 1rem;
 }
 
-.month p{
+.month p {
     display: inline-block;
     width: 4rem;
     text-align: center;
@@ -44,7 +51,7 @@ body {
     border-radius: 1rem;
 }
 
-.month p.current{
+.month p.current {
     background-color: #4caf4f63;
 }
 
@@ -59,7 +66,7 @@ body {
     border-radius: 1rem;
 }
 
-.day p{
+.day p {
     display: inline-block;
     width: 2rem;
     text-align: center;
@@ -70,11 +77,11 @@ body {
     border-radius: 1rem;
 }
 
-.day .week .holiday{
+.day .week .holiday {
     color: brown;
 }
 
-.day .week{
+.day .week {
     position: absolute;
     background-color: #4caf4f63;
     border-radius: 1rem;
@@ -82,7 +89,7 @@ body {
     left: 0;
 }
 
-.day .today{
+.day .today {
     position: absolute;
     background-color: #4caf4f63;
     height: 4rem;

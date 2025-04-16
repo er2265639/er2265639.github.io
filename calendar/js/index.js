@@ -103,23 +103,28 @@ $(document).ready(function () {
     currentMediaNo = getMediaNo();
 
     displayMedia(currentMediaNo);
+    palyVideo();
 
     $('body').click(function (e) {
         currentMediaNo = getMediaNo();
-
-        // while(currentMediaNo === getMediaNo()) {
-        //     currentMediaNo = getMediaNo();
-        // }
-
+        
         displayMedia(currentMediaNo);
     });
 });
 
 function displayMedia(no) {
-    $('.media').css('display', 'none');
-    $($('.media').get(no)).css('display', 'block');
+    $('.media').removeClass('visible');
+    $($('.media').get(no)).addClass('visible');
 }
 
 function getMediaNo() {
     return Math.floor(Math.random() * mediaLength);
+}
+
+function palyVideo() {
+    $.each($('video'), function (index, value) { 
+        if ($(this).get(0).paused === true) {
+            $(this).get(0).play();
+        }
+    });
 }

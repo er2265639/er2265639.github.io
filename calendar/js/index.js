@@ -117,7 +117,7 @@ $(document).ready(function () {
 
 function displayMedia(no) {
     $('.media').css('display', 'none');
-    $('.media').get(no).css('display', 'block');
+    $($('.media').get(no)).css('display', 'block');
 }
 
 function getMediaNo() {

@@ -115,7 +115,7 @@ $(document).ready(function () {
         currentMediaNo = getMediaNo();
 
         displayMedia(currentMediaNo);
-    },1000);
+    },1000 * 60 * 15);
 });
 
 function displayMedia(no) {

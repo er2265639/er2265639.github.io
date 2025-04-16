@@ -124,7 +124,13 @@ function displayMedia(no) {
 }
 
 function getMediaNo() {
-    return Math.floor(Math.random() * mediaLength);
+    thisMediaNo = Math.floor(Math.random() * mediaLength);
+
+    while (thisMediaNo === currentMediaNo) {
+        thisMediaNo = Math.floor(Math.random() * mediaLength);
+    }
+
+    return thisMediaNo;
 }
 
 function palyVideo() {

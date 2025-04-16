@@ -1,4 +1,9 @@
+var mediaLength = 0;
+var currentMediaNo = 0;
+
 $(document).ready(function () {
+    mediaLength = $('.media').length;
+
     setInterval(function () {
         var date = new Date();
         var month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
@@ -95,17 +100,26 @@ $(document).ready(function () {
         $('.time').text(hh + '：' + mm + '：' + ss)
     }, 1000);
 
-    $('body').click(function (e) {
-        if ($('video').css('display') !== 'block') {
-            $('video').css('display', 'block')
-            $('.picture').css('display', 'none');
+    currentMediaNo = getMediaNo();
 
-            if ($('video').get(0).paused === true) {
-                $('video').get(0).play();
-            }
-        } else {
-            $('video').css('display', 'none')
-            $('.picture').css('display', 'block');
-        }
+    displayMedia(currentMediaNo);
+
+    $('body').click(function (e) {
+        currentMediaNo = getMediaNo();
+
+        // while(currentMediaNo === getMediaNo()) {
+        //     currentMediaNo = getMediaNo();
+        // }
+
+        displayMedia(currentMediaNo);
     });
 });
+
+function displayMedia(no) {
+    $('.media').css('display', 'none');
+    $('.media').get(no).css('display', 'block');
+}
+
+function getMediaNo() {
+    return Math.floor(Math.random() * mediaLength);
+}

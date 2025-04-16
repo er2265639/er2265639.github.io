@@ -5,7 +5,7 @@ body {
     overflow: hidden;
 }
 
-video {
+media {
     width: 60%;
     position: absolute;
     top: 20%;
@@ -14,16 +14,13 @@ video {
     display: none;
 }
 
-.picture {
-    width: 60%;
-    position: absolute;
-    top: 5%;
-    left: 2%;
-    z-index: -1;
+.media img {
+    width: 100%;
 }
 
-.picture img {
-    width: 100%;
+.xenoblade2 {
+    top: 5%;
+    left: 2%;
 }
 
 .month {

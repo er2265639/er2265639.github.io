@@ -104,14 +104,11 @@ $(document).ready(function () {
 
     displayMedia(currentMediaNo);
 
-    setTimeout(function() {
-        palyVideo();
-    }, 5000);
-
     $('body').click(function (e) {
         currentMediaNo = getMediaNo();
 
         displayMedia(currentMediaNo);
+        palyVideo();
     });
 });
 

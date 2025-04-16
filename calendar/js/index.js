@@ -130,8 +130,6 @@ function getMediaNo() {
         thisMediaNo = Math.floor(Math.random() * mediaLength);
     }
 
-    console.log(thisMediaNo);
-
     return thisMediaNo;
 }
 

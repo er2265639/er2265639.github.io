@@ -110,6 +110,12 @@ $(document).ready(function () {
         displayMedia(currentMediaNo);
         palyVideo();
     });
+
+    setInterval(function () {
+        currentMediaNo = getMediaNo();
+
+        displayMedia(currentMediaNo);
+    },1000);
 });
 
 function displayMedia(no) {
